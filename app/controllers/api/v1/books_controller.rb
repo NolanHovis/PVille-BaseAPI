@@ -4,7 +4,7 @@ module Api
       # POST /api/v1/books
       def create 
         result = Books.new_book(book_params, @current_user)
-        return render_error(errors: "Error saving book!", status: 400) and return unless result.success?
+        render_error(errors: "Error saving book!", status: 400) and return unless result.success?
 
         payload = {
           book: BookBlueprint.render_as_hash(result.payload)
