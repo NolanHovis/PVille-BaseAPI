@@ -1,4 +1,4 @@
-module BaseApi
+
   module Books
     def self.new_book(params, current_user)
       book = current_user.books.new(params)
@@ -18,5 +18,3 @@ module BaseApi
       ServiceContract.success(payload: nil)
     end
   end
-
-end
